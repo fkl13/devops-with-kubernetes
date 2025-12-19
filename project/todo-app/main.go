@@ -14,11 +14,17 @@ func main() {
 		log.Fatal("PORT must be set")
 	}
 
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprint(w, "Todo App is running\n")
+	})
+
 	srv := &http.Server{
-		Addr: fmt.Sprintf(":%s", port),
+		Addr:    fmt.Sprintf(":%s", port),
+		Handler: mux,
 	}
 
-	log.Printf("Server started in port %s\n", port)
+	log.Printf("Server started on port %s\n", port)
 
 	err := srv.ListenAndServe()
 	if errors.Is(err, http.ErrServerClosed) {

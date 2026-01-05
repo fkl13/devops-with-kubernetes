@@ -2,22 +2,17 @@
 
 Build image:
 ```
-docker image build -t todo-app .
+docker image build -t fkl13/todo-app:1.0 .
 ```
 
 Run as a container:
 ```
-docker run -p 8080:8080 -e PORT=8080 todo-app:latest
-```
-
-Import image:
-```
-k3d image import todo-app
+docker run -p 8080:8080 -e PORT=8080 fkl13/todo-app:1.0
 ```
 
 Apply deployment:
 ```
-kubectl create -f deployment.yaml
+kubectl apply -f deployment.yaml
 ```
 
 Check logs:

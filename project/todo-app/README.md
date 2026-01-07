@@ -38,6 +38,12 @@ Apply deployment:
 kubectl apply -f deployment.yaml
 ```
 
+Forward port:
+```
+kubectl get pods
+kubectl port-forward <todo-app-pod> 3000:3000
+```
+
 Send request:
 ```
 curl localhost:3000

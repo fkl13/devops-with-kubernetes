@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: fkl13/todo-app:1.0
+          image: fkl13/todo-app:1.1
           env:
             - name: PORT
-              value: "8080"
+              value: "3000"

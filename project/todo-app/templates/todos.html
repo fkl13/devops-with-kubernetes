@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <title>Todos</title>
+</head>
+<body>
+<header>
+    <h1>My Todo list</h1>
+</header>
+<main>
+    {{ if eq (len .) 0 }}
+    No todos.
+    {{ else }}
+    <ul>
+        {{ range . }}
+        <li>
+            {{ if .Done }}
+            &#9989;
+            {{ else }}
+            &#10060;
+            {{ end }}
+            {{.Title}}
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</main>
+</body>
+</html>

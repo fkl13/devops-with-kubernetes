@@ -35,7 +35,7 @@ docker run -e PORT=3000 -p 3000:3000 fkl13/todo-app:1.1
 
 Apply deployment:
 ```
-kubectl apply -f deployment.yaml
+kubectl apply -f manifests/deployment.yaml
 ```
 
 Forward port:

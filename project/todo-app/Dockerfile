@@ -9,4 +9,8 @@ RUN CGO_ENABLED=0 go build -o /bin/todo-app
 
 FROM scratch
 COPY --from=build /bin/todo-app /bin/todo-app
+COPY --from=build /src/templates/ /templates
+
+EXPOSE 3000
+
 ENTRYPOINT ["/bin/todo-app"]

@@ -48,3 +48,9 @@ Send request:
 ```
 curl localhost:3000
 ```
+
+## 1.6
+
+```
+kubectl apply -f manifests/service.yaml
+```
